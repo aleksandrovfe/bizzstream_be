@@ -11,6 +11,9 @@ const validateData = async (req, res, next) => {
         if (doc.type === 'Text' && typeof value !== 'string') {
             req.validationError = true
         }
+        if (!doc) {
+            req.validationError = true
+        }
     })
 
     next()
